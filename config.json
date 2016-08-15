@@ -1,0 +1,14 @@
+{
+    "root": [
+        "src/index.html",
+        "src/.htaccess",
+        "src/favicon.ico"
+    ],
+    "scssIncludePaths": [
+        "node_modules/bourbon/app/assets/stylesheets",
+        "node_modules/bourbon-neat/app/assets/stylesheets"
+    ],
+    "cssVendor": [
+        "node_modules/normalize.css/normalize.css"
+    ]
+}
