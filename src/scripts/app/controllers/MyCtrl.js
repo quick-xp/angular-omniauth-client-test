@@ -32,5 +32,15 @@ function ($scope,$state,$stateParams, $auth, MemberService) {
         });
 
     }
+
+    $scope.signOutBtnClick = function(){
+        $auth.signOut()
+        .then(function(resp){
+            console.log('Sign Out Successful');
+        })
+        .catch(function(resp){
+
+        });
+    };
 }
 ]);

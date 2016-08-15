@@ -40,6 +40,7 @@ angular.module('mApp', [ngTouch, ngSanitize,ngResource, uiRouter, mAnimations, m
         $authProvider.configure({
             apiUrl: 'http://localhost:3010',
             emailSignInPath: '/auth/sign_in',
+            signOutUrl: '/auth/sign_out',
             storage: 'cookies',
             authProviderPaths: {
                 github:   '/auth/github'
