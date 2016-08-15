@@ -1,5 +1,6 @@
 # 概要
 Rails5 + AngularにおけるOmniauth認証の稼動確認(クライアントサイド)
+
 本プロジェクトは下記ツールを用いて作成しています。
 
 # Angular with Webpack
