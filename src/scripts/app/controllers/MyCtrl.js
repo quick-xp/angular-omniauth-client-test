@@ -22,6 +22,17 @@ function ($scope,$state,$stateParams, $auth, MemberService) {
         });
     };
 
+    $scope.eveOnlineLoginBtnClick = function(){
+        console.log('Eve Online Login Btn Click');
+        $auth.authenticate('eve_online')
+        .then(function(resp){
+            console.log('Eve Online Login Successful');
+        })
+        .catch(function(resp){
+            console.log('Eve Online Login Fali');
+        });
+    };
+
     $scope.memberOnlyBtnClick = function(){
         console.log('Member Only Btn Click');
 

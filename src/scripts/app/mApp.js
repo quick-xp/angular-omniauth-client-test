@@ -43,7 +43,8 @@ angular.module('mApp', [ngTouch, ngSanitize,ngResource, uiRouter, mAnimations, m
             signOutUrl: '/auth/sign_out',
             storage: 'cookies',
             authProviderPaths: {
-                github:   '/auth/github'
+                github:   '/auth/github',
+                eve_online: '/auth/eve_online'
             },
             tokenFormat: {
                 "access-token": "{{ token }}",
