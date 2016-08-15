@@ -3,18 +3,21 @@
 var angular = require('angular'),
     ngTouch = require('angular-touch'),
     ngSanitize = require('angular-sanitize'),
+    ngResource = require('angular-resource'),
     uiRouter = require('angular-ui-router'),
     mAnimations = require('./animations/_loader'),
     mCtrls = require('./controllers/_loader'),
     mDirectives = require('./directives/_loader'),
-    mServices = require('./services/_loader');
+    mServices = require('./services/_loader'),
+    angularCookie = require('angular-cookie'),
+    ngTokenAuth = require('ng-token-auth');
 
 
 /**
  * Register main angular app
  */
-angular.module('mApp', [ngTouch, ngSanitize, uiRouter, mAnimations, mCtrls, mDirectives, mServices])
-    .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
+angular.module('mApp', [ngTouch, ngSanitize,ngResource, uiRouter, mAnimations, mCtrls, mDirectives, mServices,angularCookie, ngTokenAuth])
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
         'ngInject';
 
         $stateProvider
@@ -33,6 +36,22 @@ angular.module('mApp', [ngTouch, ngSanitize, uiRouter, mAnimations, mCtrls, mDir
                 templateUrl: 'tpls/views/detail.html',
                 controller: 'DetailCtrl'
             });
+
+        $authProvider.configure({
+            apiUrl: 'http://localhost:3010',
+            emailSignInPath: '/auth/sign_in',
+            storage: 'cookies',
+            authProviderPaths: {
+                github:   '/auth/github'
+            },
+            tokenFormat: {
+                "access-token": "{{ token }}",
+                "token-type":   "Bearer",
+                "client":       "{{ clientId }}",
+                "expiry":       "{{ expiry }}",
+                "uid":          "{{ uid }}"
+            }
+        });
 
         $urlRouterProvider.otherwise('/');
 
