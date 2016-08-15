@@ -1,3 +1,7 @@
+# 概要
+Rails5 + AngularにおけるOmniauth認証の稼動確認(クライアントサイド)
+本プロジェクトは下記ツールを用いて作成しています。
+
 # Angular with Webpack
 Project was generated with Yeoman generator
 [generator-angular-webpack](https://www.npmjs.com/package/generator-angular-webpack)
